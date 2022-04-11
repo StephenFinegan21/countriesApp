@@ -1,20 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@200;300;400;600;800&display=swap');
+
+/*  
+Responsive Breakpoints
+By default styles are for smaller screens < 800px
+*/
+$medium: 800px; 
+$large: 1500px;
 
 
+body{
+  background-color: rgb(248, 248, 248);
+  font-family: 'Kumbh Sans', sans-serif;
+}
+/* Screen A (Displaying list of all countries in a Grid)*/
 .grid-container{
   width: 80%;
   margin: auto;
   display: grid;
   grid-template-columns: 1fr;
+
+  @media screen and (min-width: $medium) {
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  @media screen and (min-width: $large) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
   
   .grid-element{
     padding: 5%;
     margin: 5%;
-    border: 1px solid blue;
+    border: 2px solid rgb(240, 240, 240);
+    background-color: white;
+    transition: 0.2s ease-in;
+    cursor: pointer;
 
 
     img{
-      max-width: 100px;
+      width:100%;
+      height: fit-content;
+      pointer-events: none;
+
     }
+
+    span{
+      font-weight: 600;
+      pointer-events: none;
+    
+    }
+  }
+
+  .grid-element:hover{
+    background-color: rgb(222, 238, 253);
+   
   }
 
   

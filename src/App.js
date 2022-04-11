@@ -24,6 +24,7 @@ function App() {
 
 
   return (
+  
     <div className="grid-container">
       {isLoading ?
         <p>Loading</p> :
