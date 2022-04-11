@@ -1,0 +1,21 @@
+
+
+.grid-container{
+  width: 80%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  
+  .grid-element{
+    padding: 5%;
+    margin: 5%;
+    border: 1px solid blue;
+
+
+    img{
+      max-width: 100px;
+    }
+  }
+
+  
+}
