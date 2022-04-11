@@ -11,7 +11,7 @@ $large: 1500px;
 body{
   background-color: rgb(248, 248, 248);
   font-family: 'Kumbh Sans', sans-serif;
-  color: rgb(55, 55, 55);
+  color: rgb(43, 43, 43);
 }
 /* Screen A (Displaying list of all countries in a Grid)*/
 .grid-container{
@@ -59,4 +59,17 @@ body{
   }
 
   
+}
+
+
+
+
+
+/* Screen B (Displaying detailed info for one country)*/
+.country-information{
+  width: 80%;
+  margin: auto;
+  border: 2px solid rgb(240, 240, 240);
+  background-color: white;
+  padding: 5%;
 }
