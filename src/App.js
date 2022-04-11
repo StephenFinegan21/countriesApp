@@ -8,7 +8,9 @@ function App() {
   useEffect(() => {
     axios.get('https://restcountries.com/v3.1/all')
       .then(response => {
-        console.log(response)
+        console.log(response.data[4].name.common)
+        console.log(response.data[4].population)
+        console.log(response.data[4].capital[0])
       })
   }, [])
 
