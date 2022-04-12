@@ -4,10 +4,12 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {BrowserRouter, Routes, Route}  from 'react-router-dom'
 import Country from './Pages/Country'
+import Header from './Components/Header'
 
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
+    <Header />
       <Routes>
         <Route path='/' element = {<App />}></Route>
         <Route path='/country/:countryName' element = {<Country />}></Route>

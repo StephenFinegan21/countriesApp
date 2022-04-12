@@ -3,11 +3,12 @@ import { useParams } from 'react-router-dom'
 import axios from 'axios'
 import CountryStats from '../Components/CountryStats'
 import { Link } from 'react-router-dom'
+import Loader from '../Components/Loader'
 
 const Country = () => {
 
-    const urlParam = useParams().countryName
-    const [currentCountry , setCurrentCountry] = useState()
+    const urlParam = useParams().countryName //Gets the Country from the URL
+    const [currentCountry , setCurrentCountry] = useState() //Current country being viewed
     const [isLoading, setIsLoading] = useState(true) //set to false after data is fetched
 
 
@@ -24,12 +25,17 @@ const Country = () => {
   
   return (
     <div className='country-information'>
-         {isLoading ?
-            <p>Loading</p> :
+        {/* While data is loading from API (isLoading === true) display Loading message to user */}
+        {isLoading && <Loader/>} 
+
+        {!isLoading && 
             <>
-                <Link to={`/`} style={{ textDecoration: 'none', color: 'rgb(43, 43, 43)' }}>Home</Link>
+                
+                <div className='flag-container'>
+                <button><Link to={`/`} style={{ textDecoration: 'none', color: 'inherit' }}>Back To All Countries</Link></button>
                 <h2>{currentCountry.name.common}</h2>
                 <img src={currentCountry.flags.png}></img>
+                </div>
                 <CountryStats data = {currentCountry} />
             </>
          }
