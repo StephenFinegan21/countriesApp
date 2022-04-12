@@ -31,7 +31,7 @@ button{
 
 }
 button:hover{
-  text-decoration: underline;
+  text-decoration: under;
 }
 
 li{
@@ -62,9 +62,11 @@ li{
 
   @media screen and (min-width: $medium) {
     grid-template-columns: 1fr 1fr;
+    
   }
   
   @media screen and (min-width: $large) {
+    width: 60%;
     grid-template-columns: 1fr 1fr 1fr;
   }
   
@@ -75,6 +77,14 @@ li{
     background-color: white;
     transition: 0.2s ease-in;
     cursor: pointer;
+    height: fit-content;
+
+   
+    
+ 
+   
+    
+   
     
 
 
