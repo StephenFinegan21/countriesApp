@@ -2,6 +2,7 @@ import {React, useEffect, useState} from 'react'
 import { useParams } from 'react-router-dom'
 import axios from 'axios'
 import CountryStats from '../Components/CountryStats'
+import { Link } from 'react-router-dom'
 
 const Country = () => {
 
@@ -26,6 +27,7 @@ const Country = () => {
          {isLoading ?
             <p>Loading</p> :
             <>
+                <Link to={`/`} style={{ textDecoration: 'none', color: 'rgb(43, 43, 43)' }}>Home</Link>
                 <h2>{currentCountry.name.common}</h2>
                 <img src={currentCountry.flags.png}></img>
                 <CountryStats data = {currentCountry} />

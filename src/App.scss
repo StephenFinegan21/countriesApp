@@ -13,6 +13,16 @@ body{
   font-family: 'Kumbh Sans', sans-serif;
   color: rgb(43, 43, 43);
 }
+
+span{
+  font-weight: 600;
+  pointer-events: none;
+}
+
+li{
+  list-style: none;
+  padding: 5%;
+}
 /* Screen A (Displaying list of all countries in a Grid)*/
 .grid-container{
   width: 80%;
@@ -46,11 +56,7 @@ body{
 
     }
 
-    span{
-      font-weight: 600;
-      pointer-events: none;
     
-    }
   }
 
   .grid-element:hover{
@@ -72,4 +78,9 @@ body{
   border: 2px solid rgb(240, 240, 240);
   background-color: white;
   padding: 5%;
+}
+
+.bordering-countries-grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
 }
