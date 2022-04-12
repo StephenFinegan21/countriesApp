@@ -43,13 +43,35 @@ li{
   text-align: center;
 }
 
+
+.filter{
+  width: 80%;
+  margin: auto;
+  
+  text-align: center;
+
+  input{
+    padding: 1%;
+    width: 20%;
+    border: 2px solid rgb(240, 240, 240);
+    font-size: 1.5rem;
+    
+  }
+  
+}
+
 /* Component displayed to user while data is being loaded from API*/
 .loader{
+  position:absolute;
+  top: 0;
+  left: 0;
   text-align: center;
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 100%;
+  
 }
 
 /* Screen A (Displaying list of all countries in a Grid)*/
@@ -79,16 +101,7 @@ li{
     cursor: pointer;
     height: fit-content;
 
-   
-    
- 
-   
-    
-   
-    
-
-
-    img{
+   img{
       width:100%;
       height: fit-content;
       pointer-events: none;
