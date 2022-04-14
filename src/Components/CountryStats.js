@@ -20,13 +20,16 @@ const CountryStats = ( { data }) => {
             )}
             </div>
         </div>
-
+                    
         <div>
             <h2>Bordering Countries</h2>
             <div className='list-grid'>
                 {data.borders && data.borders.map(country => 
                 <li key={country}>{country}</li>)}
+
+                
              </div>
+             {!data.borders && <p>This country does not border another country</p>}  
        </div>
     </div>
     

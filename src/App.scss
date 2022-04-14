@@ -45,16 +45,39 @@ li{
 
 
 .filter{
-  width: 80%;
+  width: 100%;
   margin: auto;
   
-  text-align: center;
+  
+
+  @media screen and (min-width: $medium) {
+    
+    width: 90%;
+  }
+  
+  @media screen and (min-width: $large) {
+    width: 80%;
+    
+  }
+ 
+ 
 
   input{
     padding: 1%;
-    width: 20%;
+    width: 80%;
     border: 2px solid rgb(240, 240, 240);
     font-size: 1.5rem;
+
+    @media screen and (min-width: $medium) {
+    
+      width: 45%;
+    }
+
+    @media screen and (min-width: $large) {
+      width: 27.5%;
+      
+    }
+  
     
   }
   
@@ -74,32 +97,54 @@ li{
   
 }
 
+.container{
+  width: 80%;
+  margin: auto;
+}
+
 /* Screen A (Displaying list of all countries in a Grid)*/
 .grid-container{
-  width: 80%;
+  width: 100%;
   margin: auto;
   display: grid;
   grid-template-columns: 1fr;
   text-decoration: none;
+  column-gap: 5%;
 
   @media screen and (min-width: $medium) {
     grid-template-columns: 1fr 1fr;
-    
+    width: 90%;
   }
   
   @media screen and (min-width: $large) {
-    width: 60%;
+    width: 80%;
     grid-template-columns: 1fr 1fr 1fr;
   }
   
   .grid-element{
     padding: 5%;
-    margin: 5%;
+    padding-bottom: 10%;
+    margin: 5% 0;
     border: 2px solid rgb(240, 240, 240);
     background-color: white;
     transition: 0.2s ease-in;
     cursor: pointer;
     height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    @media screen and (min-width: $medium) {
+      min-height: 450px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    
+   
+    
+   
+    
 
    img{
       width:100%;
