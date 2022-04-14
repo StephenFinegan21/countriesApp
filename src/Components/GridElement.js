@@ -5,14 +5,32 @@ import { Link } from 'react-router-dom'
 //Stored in 'data' variable
 const GridElement = ( {data} ) => {
 
- 
-  
+  const [sort, setSort] = useState('alpha')
 
+  useEffect(()=> {
+    data.sort((a, b) => a.name.common.localeCompare(b.name.common))
+   
+  // console.log(data)
+  }, [])
+  //console.log(data.map(m => m.population))
+
+
+
+  const changeSort = () => {
+    if(sort === 'alpha'){
+      setSort('population')
+      data.sort((a, b) => a.population - b.population )
+    }
+    else if(sort === 'population'){
+      setSort('alpha')
+      data.sort((a, b) => a.name.common.localeCompare(b.name.common))
+    }
+  }
   
 
   return (
     <>
-    
+    <button onClick={changeSort}>Population</button>
      {data.map(country =>  
       <Link to={`/country/${country.name.common}`} style={{ textDecoration: 'none', color: 'rgb(43, 43, 43)' }}>
         <div className = 'grid-element' key={country.name.official} >

@@ -11,7 +11,8 @@ function App() {
   const [isLoading, setIsLoading] = useState(true) //set to false after data is fetched
   const [searchFilter, setSearchFilter] = useState() //Stores search term that user can filter by
   const [countries, setCountries] = useState() //Stores the list of all countries to be shown to user
-  
+  const [sort, setSort] = useState('alpha') //set to false after data is fetched
+
   useEffect(() => {
     //When Search term is changed, update the countries to be shown
     setCountries(initialCountries.filter(c => c.name.common.toLowerCase().includes(searchFilter.toLowerCase())) )
@@ -19,10 +20,11 @@ function App() {
   },[searchFilter])
 
   //Will fetch Data from API on first render of this component only 
-  useEffect(() => {
+  useEffect((async ) => {
     axios.get('https://restcountries.com/v3.1/all')
-      .then(response => {
-        //console.log(response.data[4].name.common)
+      .then(response =>  {
+        
+      
         setInitialCountries(response.data)
         setIsLoading(false) //App can render data after data is fetched
       })
@@ -36,6 +38,8 @@ function App() {
     setSearchFilter(event.target.value)
    }
 
+   
+
   return (
     <>
     
@@ -46,10 +50,12 @@ function App() {
       {isLoading && <Loader/>} 
 
       {!isLoading && 
+    
         
         <GridElement 
       data = {searchFilter ? countries : initialCountries /*If a search filter exists show filtered list, else show initial (all countries) */} 
-      />}
+      /> }
+   
     </div>
   </>
   );
