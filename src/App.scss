@@ -1,24 +1,21 @@
-@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@200;300;400;600;800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@200;300;400;600;800&display=swap");
 
 /*  
 Responsive Breakpoints
 By default styles are for smaller screens < 800px
 */
-$medium: 800px; 
+$medium: 800px;
 $large: 1500px;
 
+/*   Common Element Styles      */
 
-body{
+body {
   background-color: rgb(251, 251, 251);
-  font-family: 'Kumbh Sans', sans-serif;
+  font-family: "Kumbh Sans", sans-serif;
   color: rgb(43, 43, 43);
-  
 }
 
-
-
-button{
-  
+button {
   border: none;
   background-color: white;
   padding: 0;
@@ -26,66 +23,51 @@ button{
   font-size: 1.1rem;
   font-weight: 600;
   color: coral;
- 
-  
-
-}
-button:hover{
-  text-decoration: under;
 }
 
-li{
+button:hover {
+  text-decoration: underline;
+}
+
+li {
   list-style: none;
   padding: 5%;
 }
 
-.header{
+/*   Countries App Heading Div      */
+.header {
   text-align: center;
 }
 
-
-.filter{
+/*   Search Filter Div     */
+.filter {
   width: 100%;
   margin: auto;
-  
-  
 
   @media screen and (min-width: $medium) {
-    
     width: 90%;
   }
-  
   @media screen and (min-width: $large) {
     width: 80%;
-    
   }
- 
- 
-
-  input{
+  input {
     padding: 1%;
-    width: 80%;
+    width: 97.5%;
     border: 2px solid rgb(240, 240, 240);
     font-size: 1.5rem;
 
     @media screen and (min-width: $medium) {
-    
       width: 45%;
     }
-
     @media screen and (min-width: $large) {
       width: 27.5%;
-      
     }
-  
-    
   }
-  
 }
 
 /* Component displayed to user while data is being loaded from API*/
-.loader{
-  position:absolute;
+.loader {
+  position: absolute;
   top: 0;
   left: 0;
   text-align: center;
@@ -94,16 +76,16 @@ li{
   align-items: center;
   justify-content: center;
   width: 100%;
-  
 }
 
-.container{
+/*   Container For Content      */
+.container {
   width: 80%;
   margin: auto;
 }
 
 /* Screen A (Displaying list of all countries in a Grid)*/
-.grid-container{
+.grid-container {
   width: 100%;
   margin: auto;
   display: grid;
@@ -115,13 +97,13 @@ li{
     grid-template-columns: 1fr 1fr;
     width: 90%;
   }
-  
+
   @media screen and (min-width: $large) {
     width: 80%;
     grid-template-columns: 1fr 1fr 1fr;
   }
-  
-  .grid-element{
+
+  .grid-element {
     padding: 5%;
     padding-bottom: 10%;
     margin: 5% 0;
@@ -140,36 +122,19 @@ li{
       flex-direction: column;
       justify-content: center;
     }
-    
-   
-    
-   
-    
-
-   img{
-      width:100%;
+    img {
+      width: 100%;
       height: fit-content;
       pointer-events: none;
-
     }
-
-    
   }
-
-  .grid-element:hover{
+  .grid-element:hover {
     background-color: rgb(222, 238, 253);
-   
   }
-
-  
 }
 
-
-
-
-
 /* Screen B (Displaying detailed info for one country)*/
-.country-information{
+.country-information {
   width: 80%;
   margin: auto;
   margin-top: 5%;
@@ -178,29 +143,20 @@ li{
   padding: 5%;
 }
 
-.flag-container{
+.flag-container {
   width: 80%;
   margin: auto;
-
   margin-bottom: 5%;
- 
-  
-
-
- 
 }
 
-.country-stats{
+.country-stats {
   width: 80%;
-
   margin: auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
 
-
-
-.list-grid{
+.list-grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
 }
