@@ -4,8 +4,8 @@ import CountryGridElement from "./CountryGridElement";
 
 //List of all countries passed in as props from App Component
 //Stored in 'data' variable
-const GridContainer = ({ data, searchFilter }) => {
-  const [countries, setCountries] = useState(data); //Stores the list of all countries to be shown to user
+const GridContainer = ({ data, searchFilter, sortAlpha }) => {
+  const [countries, setCountries] = useState(); //Stores the list of all countries to be shown to user
 
   useEffect(() => {
     //When Search term is changed, update the countries to be shown
@@ -15,6 +15,10 @@ const GridContainer = ({ data, searchFilter }) => {
       )
     );
   }, [searchFilter, data]);
+
+  useEffect(() => {
+    //When Search term is changed, update the countries to be shown
+  }, [sortAlpha]);
 
   return (
     <>

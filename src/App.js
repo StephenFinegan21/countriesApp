@@ -9,7 +9,6 @@ function App() {
   const [initialCountries, setInitialCountries] = useState([]); //Initial variable to store data fetched by API
   const [isLoading, setIsLoading] = useState(true); //set to false after data is fetched
   const [searchFilter, setSearchFilter] = useState(""); //Stores search term that user can filter by
-  const [sort, setSort] = useState("");
 
   //Will fetch Data from API on first render of this component only
   useEffect(() => {
@@ -41,7 +40,6 @@ function App() {
             <GridContainer
               data={initialCountries}
               searchFilter={searchFilter}
-              sort={sort}
             />
           )}
         </div>

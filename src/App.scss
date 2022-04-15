@@ -13,6 +13,7 @@ body {
   background-color: rgb(251, 251, 251);
   font-family: "Kumbh Sans", sans-serif;
   color: rgb(43, 43, 43);
+  max-width: 100%;
 }
 
 button {
@@ -104,6 +105,8 @@ li {
   }
 
   .grid-element {
+    max-width: 100%;
+  
     padding: 5%;
     padding-bottom: 10%;
     margin: 5% 0;
@@ -123,6 +126,7 @@ li {
       justify-content: center;
     }
     img {
+      max-width: 100%;
       width: 100%;
       height: fit-content;
       pointer-events: none;
