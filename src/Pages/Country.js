@@ -22,12 +22,14 @@ const Country = () => {
   }, []);
 
   return (
+       <>
+    {/* While data is loading from API (isLoading === true) display Loading message to user */}
+    {isLoading && <Loader />}
+    
+    {!isLoading && (
     <div className="country-information">
-      {/* While data is loading from API (isLoading === true) display Loading message to user */}
-      {isLoading && <Loader />}
-
-      {!isLoading && (
-        <>
+     
+     
           <div className="flag-container">
             <button>
               <Link
@@ -41,9 +43,10 @@ const Country = () => {
             <img src={currentCountry.flags.png}></img>
           </div>
           <CountryStats data={currentCountry} />
-        </>
+     
+         </div>
       )}
-    </div>
+      </>
   );
 };
 
