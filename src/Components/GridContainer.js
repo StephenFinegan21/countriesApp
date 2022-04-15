@@ -9,26 +9,19 @@ const GridElement = ( {data, searchFilter} ) => {
   
   const [countries, setCountries] = useState(data) //Stores the list of all countries to be shown to user
 
-  useEffect(() => {
+  
 
-      
-    
+
+  useEffect(() => {
     //When Search term is changed, update the countries to be shown
     setCountries(data.filter(c => c.name.common.toLowerCase().includes(searchFilter.toLowerCase())) )
-    
   },[searchFilter])
 
- 
 
-
-
-  return (
+return (
     <>
-    
-     {countries && countries.map(country => 
-    <CountryGridElement country = {country} />
-      
-     )}
+      {countries && countries.map(country => 
+        <CountryGridElement country = {country} />)}
     </>
   )
      }

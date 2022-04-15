@@ -10,17 +10,12 @@ function App() {
   const [initialCountries, setInitialCountries] = useState ([]) //Initial variable to store data fetched by API
   const [isLoading, setIsLoading] = useState(true) //set to false after data is fetched
   const [searchFilter, setSearchFilter] = useState('') //Stores search term that user can filter by
-  
-
-
- 
+  const [sort, setSort] = useState('')
 
   //Will fetch Data from API on first render of this component only 
   useEffect(( ) => {
     axios.get('https://restcountries.com/v3.1/all')
       .then(response =>  {
-        
-      
         setInitialCountries(response.data)
         setIsLoading(false) //App can render data after data is fetched
       })
@@ -34,26 +29,27 @@ function App() {
     setSearchFilter(event.target.value)
    }
 
-   
+ 
 
+  
   return (
     <>
     <div className='container'>
-    <Filter onChange ={updateFilter} />
-    <div className="grid-container">
+      <Filter 
+      onChange ={updateFilter}
+   />
+      <div className="grid-container">
     
-      {/* While data is loading from API (isLoading === true) display Loading message to user */}
-      {isLoading && <Loader/>} 
+        {/* While data is loading from API (isLoading === true) display Loading message to user */}
+        {isLoading && <Loader/>} 
 
-      {!isLoading && 
-    
-        
-        <GridContainer
-      data = {initialCountries} 
-      searchFilter = {searchFilter}
-      /> }
-   
-    </div>
+        {!isLoading && 
+          <GridContainer
+            data = {initialCountries} 
+            searchFilter = {searchFilter}
+            sort = {sort}
+          /> }
+      </div>
     </div>
   </>
   );
