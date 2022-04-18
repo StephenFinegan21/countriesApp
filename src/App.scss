@@ -165,13 +165,21 @@ li {
   width: 80%;
   margin: auto;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  padding: 2%;
+  grid-template-columns: 1fr ;
+  
+
+  @media screen and (min-width: $medium) {
+    grid-template-columns: 1fr 1fr;
+  }
 
 }
 
 .list-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   padding: 2%;
+
+  @media screen and (min-width: $medium) {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
 }
