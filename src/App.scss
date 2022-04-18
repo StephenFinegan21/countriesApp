@@ -139,6 +139,7 @@ li {
 
 /* Screen B (Displaying detailed info for one country)*/
 .country-information {
+  max-width: 100%;
   width: 80%;
   margin: auto;
   margin-top: 5%;
@@ -148,12 +149,15 @@ li {
 }
 
 .flag-container {
+
+  max-width: 100%;
   width: 80%;
   margin: auto;
   margin-bottom: 5%;
 }
 
 .country-stats {
+  max-width: 100%;
   width: 80%;
   margin: auto;
   display: grid;
